@@ -1,0 +1,72 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-language" content="ru" />
+		<title>Курс focus start</title>
+	</head>
+	<body>
+		<div class="o-header">
+			<a class="o-header_item">Главная</a>
+			<a class="o-header_item">Программа курсов</a>
+			<a class="o-header_item">Расписание занятий</a>
+		</div>
+		<div class="o-wrapper">
+			<article id="ui7">
+				<div class="article_item">Тестовый пост</div>
+				Программа focus start направлена на повышение квалификации
+				junior-специалистов до уровня, который позволит им участвовать в сложных
+				проектах компании ЦФТ. Мы многое умеем делать хорошо. И мы хотим
+				делиться этими знаниями и навыками с теми, кто имеет желание, цель и
+				самое главное - готовность проявлять усилия, чтобы эти знания и навыки
+				получть!
+				<span class="button">Узнать больше </span>
+			</article>
+		</div>
+		<div class="o-footer" id="ui7" align="right">
+			<a class="o-footer_item">Главная</a>
+			<a class="o-footer_item">Программа курсов</a>
+			<a class="o-footer_item">Расписание занятий</a>
+		</div>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Лучшая практика подключать стили внутри <head>, но необязательно.  -->
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>Курс focus start</title>
+		<meta http-equiv="content-language" content="ru" />
+	</head>
+	<body>
+		<div class="o-header">
+			<!-- В тег a я поставил href, чтобы была возможность сделать навигацию -->
+			<a class="o-header_item" href="#">Главная</a>
+			<a class="o-header_item" href="#">Программа курсов</a>
+			<a class="o-header_item" href="#">Расписание занятий</a>
+		</div>
+		<div class="o-wrapper">
+			<article id="ui7">
+				<div class="article_item">Тестовый пост</div>
+				<!-- Добавил новый div с классом article_content, чтобы можно было менять стили текста. -->
+				<div class="article_content">
+					Программа focus start направлена на повышение квалификации
+					junior-специалистов до уровня, который позволит им участвовать в
+					сложных проектах компании ЦФТ. Мы многое умеем делать хорошо. И мы
+					хотим делиться этими знаниями и навыками с теми, кто имеет желание,
+					цель и самое главное - готовность проявлять усилия, чтобы эти знания и
+					навыки получть!
+				</div>
+				<!-- Также добавил тег a, чтобы была возможность сделать навигацию по кнопке -->
+				<span class="button"><a href="#">Узнать больше</a> </span>
+			</article>
+		</div>
+		<!-- Из ошибок id должен быть уникальный. id="ui7" встречается 2 раза. И например, если у class и id будет одно правило, например выбор цвета, то применится от id, так как id приоритетнее. Атрибут align для div не поддерживается в HTML5. Как вариант можно использовать атрибут style или использовать стили в css файле -->
+		<div class="o-footer" style="text-align: right">
+			<a class="o-footer_item">Главная</a>
+			<a class="o-footer_item">Программа курсов</a>
+			<a class="o-footer_item">Расписание занятий</a>
+		</div>
+	</body>
+</html>
