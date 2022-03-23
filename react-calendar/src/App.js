@@ -10,6 +10,7 @@ import AdjustIcon from '@mui/icons-material/Adjust'
 import ReplayIcon from '@mui/icons-material/Replay'
 import CropFreeIcon from '@mui/icons-material/CropFree'
 import Button from '@mui/material/Button'
+import './index.css'
 
 const locales = {
 	'en-US': require('date-fns/locale/en-US'),
@@ -49,7 +50,6 @@ const events = [
 function App() {
 	const [allEvents] = useState(events)
 	const [filtered, setFiltered] = useState(allEvents)
-	console.log(allEvents)
 	const handleFilter = ({ target }) => {
 		setFiltered(allEvents.filter(i => i.color === target.id))
 	}
@@ -58,8 +58,8 @@ function App() {
 	}
 
 	return (
-		<div className='App'>
-			<div style={{ display: 'flex', justifyContent: 'center' }}>
+		<div className='App flex-auto items-center'>
+			<div className='flex font-bold'>
 				<Calendar
 					localizer={localizer}
 					events={filtered}
@@ -77,45 +77,50 @@ function App() {
 						end,
 						isSelected,
 						style: { backgroundColor: event.color },
+						className: 'flex justify-center',
 					})}
 				/>
 			</div>
-			<div
-				style={{
-					display: 'flex',
-					justifyContent: 'center',
-					height: 50,
-				}}
-			>
-				<Button
-					id='red'
-					variant='outlined'
-					color='error'
-					startIcon={<AdjustIcon />}
-					onClick={handleFilter}
-				>
-					Переделка
-				</Button>
-
-				<Button
-					id='green'
-					startIcon={<ReplayIcon />}
-					variant='outlined'
-					color='success'
-					onClick={handleFilter}
-				>
-					Уборка
-				</Button>
-
-				<Button
-					id='blue'
-					startIcon={<CropFreeIcon />}
-					variant='outlined'
-					onClick={handleFilter}
-				>
-					Свободная дата
-				</Button>
-				<Button onClick={handleBack}>Reset all</Button>
+			<div>
+				<div className='flex justify-center '>
+					<div className='px-4'>
+						<Button
+							id='red'
+							variant='outlined'
+							color='error'
+							startIcon={<AdjustIcon />}
+							onClick={handleFilter}
+						>
+							Переделка
+						</Button>
+					</div>
+					<div className='px-4'>
+						<Button
+							id='green'
+							startIcon={<ReplayIcon />}
+							variant='outlined'
+							color='success'
+							onClick={handleFilter}
+						>
+							Уборка
+						</Button>
+					</div>
+					<div className='px-4'>
+						<Button
+							id='blue'
+							startIcon={<CropFreeIcon />}
+							variant='outlined'
+							onClick={handleFilter}
+						>
+							Свободная дата
+						</Button>
+					</div>
+				</div>
+				<div className='flex justify-center pt-5'>
+					<Button variant='contained' onClick={handleBack}>
+						Reset all
+					</Button>
+				</div>
 			</div>
 		</div>
 	)
